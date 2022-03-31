@@ -6,8 +6,8 @@ export default function Results({ results }) {
       <div
         className={
           results.success
-            ? 'px-5 py-3 border border-green-500 rounded-md shadow'
-            : 'px-5 py-3 border border-rose-500  rounded-md shadow'
+            ? 'px-5 py-3 border-x-4 border-green-300 bg-green-50'
+            : 'px-5 py-3 border-x-4 border-rose-300 bg-rose-50'
         }
       >
         <h2 className="font-semibold">{results.question}</h2>

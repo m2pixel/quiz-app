@@ -15,11 +15,9 @@ export default function Quiz() {
   )
   // api url attributes and values
   const settings = JSON.parse(localStorage.getItem('quiz-settings'))
+
   // Questions from API, stored to localStorage
-  const [questions, setQuestions] = useState([], () => {
-    const data = localStorage.getItem('quiz')
-    return data ? JSON.parse(data) : []
-  })
+  const [questions, setQuestions] = useState([])
 
   //
   const [points, setPoints] = useState(0)
@@ -68,8 +66,7 @@ export default function Quiz() {
       axios
         .get(api_url)
         .then((res) => {
-          localStorage.setItem('quiz', JSON.stringify(res.data))
-          setQuestions(JSON.parse(localStorage.getItem('quiz')))
+          setQuestions(res.data)
           setLoading(false)
         })
         .catch((err) => navigate('/404'))
@@ -158,7 +155,7 @@ export default function Quiz() {
                   Urime, ju keni kaluar kuizin me sukses!
                 </h3>
               )}
-              <div className="space-y-2">{showResults}</div>
+              <div className="space-y-3">{showResults}</div>
               <div className="flex flex-col items-center md:items-end">
                 <p className="py-2 text-xl font-semibold text-stone-700">
                   Piket e grumbulluara:{' '}

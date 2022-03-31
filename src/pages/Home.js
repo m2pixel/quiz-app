@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col mx-5">
-      <h1 className="font-medium text-xl">Miresevini ne Code Quiz</h1>
+      <h1 className="font-medium font-mono text-xl">Miresevini ne Code Quiz</h1>
       <span className="border-b-2 border-rose-500 w-1/4 md:w-28"></span>
       {user.name && (
         <div className="py-5">
@@ -70,8 +70,9 @@ export default function Home() {
             <div>
               <p className="pb-5">
                 Tung <strong>{user.name} </strong>
-                ju tashme mund te merrni pjese ne kuiz. Pyetjet do te jene rreth
-                gjuheve programuese, kryesisht HTML, JS, PHP (dhe Laravel).
+                ju tashme mund te merrni pjese ne kuiz. <br /> Pyetjet do te
+                jene rreth gjuheve programuese, kryesisht HTML, JS, PHP (dhe
+                Laravel).
                 <br />
                 <br />
                 Ju duhet zgjedhni opsionet me poshte per te filluar kuizin.
