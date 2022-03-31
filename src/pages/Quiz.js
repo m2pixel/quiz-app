@@ -4,6 +4,7 @@ import Question from '../components/Question'
 import Results from '../components/Results'
 import Loading from '../components/Loading'
 import axios from 'axios'
+import Confetti from 'react-confetti'
 
 // API Key
 const api_key = 'X8X64ASWXteVYRpL24TltQRhqOz3NnAbe3eHydIo'
@@ -151,9 +152,12 @@ export default function Quiz() {
           ) : (
             <div>
               {points >= requiredPoints && (
-                <h3 className="text-center text-xl pb-4 text-green-600 font-bold">
-                  Urime, ju keni kaluar kuizin me sukses!
-                </h3>
+                <div>
+                  <h3 className="text-center text-xl pb-4 text-green-600 font-bold">
+                    Urime, ju keni kaluar kuizin me sukses!
+                  </h3>
+                  <Confetti />
+                </div>
               )}
               <div className="space-y-3">{showResults}</div>
               <div className="flex flex-col items-center md:items-end">
